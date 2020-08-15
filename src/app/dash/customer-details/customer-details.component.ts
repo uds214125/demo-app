@@ -4,6 +4,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { FormGroup, FormControl } from '@angular/forms';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-customer-details',
@@ -23,7 +24,7 @@ export class CustomerDetailsComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor() {
+  constructor(private route: Router) {
     // Create 100 users
     const users: UserData[] = [];
     for (let i = 1; i <= 100; i++) { users.push(createNewUser(`${'IB1400'}${i}`,i)); }
@@ -40,7 +41,12 @@ export class CustomerDetailsComponent implements OnInit {
   submit(){
     // console.log("=============sort by ", this.form.value);
   }
-
+  onBack(){
+    this.route.navigate(['/dash/customer']);
+  }
+  // onNext(){
+  //   this.route.navigate(['/dash/customer']);
+  // }
 
   /**
    * Set the paginator and sort after the view init since this component will

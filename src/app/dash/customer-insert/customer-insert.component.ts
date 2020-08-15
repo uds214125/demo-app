@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-customer-insert',
@@ -9,7 +10,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 export class CustomerInsertComponent implements OnInit {
   selectedStatus: number;
   form:FormGroup;
-  constructor() { }
+  constructor(private route: Router) { }
 
   ngOnInit(): void {
     this.form = new FormGroup({
@@ -39,6 +40,9 @@ export class CustomerInsertComponent implements OnInit {
       //   this.route.navigate(['/customers']);
       // }); 
     }
+  }
+  onBack(){
+    this.route.navigate(['/dash/customer']);
   }
 
 }
