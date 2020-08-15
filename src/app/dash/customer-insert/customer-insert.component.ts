@@ -33,6 +33,8 @@ export class CustomerInsertComponent implements OnInit {
   submit() {
     if (this.form.valid) {
       console.log("============create customer details ====== ",this.form.value);
+      alert("success");
+      this.form.reset();
       // const { email, password } = this.form.value;
       // this.loginService.login(email,password).subscribe((res:any)=>{
       //   console.log("============login response ====== ", res);
