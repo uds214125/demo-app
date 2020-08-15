@@ -1,0 +1,21 @@
+<mat-toolbar color="primary" class="mat-elevation-z3">
+    <mat-toolbar-row>
+      <!-- <button mat-icon-button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-sm>
+        <mat-icon>menu</mat-icon>
+      </button> -->
+      <span>Home</span>
+      <span class="menu-spacer"></span>
+      <div fxShow="true" fxHide.lt-md>      
+        <nav> 
+          <a mat-button><span class="material-icons">
+            notification_important
+            </span>
+          </a>
+          <a mat-button><span class="material-icons">
+            account_circle
+            </span></a>
+          <!-- <a (click)="onLogout()" mat-button>Logout</a>                     -->
+        </nav>
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>

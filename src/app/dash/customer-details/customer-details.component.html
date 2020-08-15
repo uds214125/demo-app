@@ -1,0 +1,109 @@
+<!-- <mat-card>
+    <mat-card-content>
+        <form [formGroup]="form" (ngSubmit)="submit()">
+           
+                <mat-label>Select</mat-label>
+                <select formControlName="sortBy">
+                    <option value="1">CustId</option>
+                </select>
+            
+            <button mat-raised-button color="primary" type="submit">Sort</button>
+        </form>
+    </mat-card-content>
+</mat-card> -->
+
+
+
+<!-- <div class="example-container mat-elevation-z8">
+
+    <mat-table #table [dataSource]="dataSource">
+        <ng-container matColumnDef="position">
+            <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
+        </ng-container>
+
+        
+        <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+        </ng-container>
+
+        
+        <ng-container matColumnDef="weight">
+            <mat-header-cell *matHeaderCellDef> Weight </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.weight}} </mat-cell>
+        </ng-container>
+
+         
+        <ng-container matColumnDef="symbol">
+            <mat-header-cell *matHeaderCellDef> Symbol </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.symbol}} </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+</div> -->
+
+<div class="example-header">
+    <mat-form-field>
+      <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+    </mat-form-field>
+  </div>
+  
+  <div class="example-container mat-elevation-z8">
+  
+    <mat-table [dataSource]="dataSource" matSort>
+  
+      <!-- ID Column -->
+      <ng-container matColumnDef="custid">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> CUSTID </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.custid}} </mat-cell>
+      </ng-container>
+  
+      <!-- Progress Column -->
+      <ng-container matColumnDef="age">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Age </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.age}} </mat-cell>
+      </ng-container>
+  
+      <!-- Name Column -->
+      <ng-container matColumnDef="gender">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Gender </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.gender}} </mat-cell>
+      </ng-container>
+      
+      <!-- Color Column -->
+      <ng-container matColumnDef="occupation">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Occupation </mat-header-cell>
+        <!-- <mat-cell *matCellDef="let row" [style.color]="row.color"> {{row.color}} </mat-cell> -->
+        <mat-cell *matCellDef="let row"> {{row.occupation}} </mat-cell>
+      </ng-container>
+      
+      <ng-container matColumnDef="martialstatus">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> MARTIALSTATUS </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.martialstatus}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="income">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Income </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.income}} </mat-cell>
+      </ng-container>
+      
+      <ng-container matColumnDef="expense">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Expense </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.expense}} </mat-cell>
+      </ng-container>
+      
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;">
+      </mat-row>
+    </mat-table>
+  
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+  </div>
+  
+  
+  <!-- Copyright 2018 Google Inc. All Rights Reserved.
+      Use of this source code is governed by an MIT-style license that
+      can be found in the LICENSE file at http://angular.io/license -->
