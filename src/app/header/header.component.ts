@@ -19,7 +19,8 @@ export class HeaderComponent implements OnInit {
   }
 
   onLogout():void{
-    console.log(this.authService.isAuthenticated());// TODO: 
+    this.route.navigate(['/']);
+    // console.log(this.authService.isAuthenticated());// TODO: 
 
     // this.loginService.logout().subscribe((res:any)=>{
     //   this.sessionService.logout();

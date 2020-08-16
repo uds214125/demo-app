@@ -4,7 +4,17 @@
   }
   .td-style{
     padding: 25px;
+    background: grey;
+    border: 2px ridge;
+    padding-left: 49px;
+  }
+  .td-style:hover{
+    cursor: pointer;
   }
   .table-style{
-    margin: auto;
+    margin: 189px auto;
+  }
+  
+  mat-card{
+    margin-top: 12%
   }

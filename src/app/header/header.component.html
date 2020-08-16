@@ -11,10 +11,15 @@
             notification_important
             </span>
           </a>
-          <a mat-button><span class="material-icons">
+          <a mat-button  [matMenuTriggerFor]="menu"><span class="material-icons">
             account_circle
             </span></a>
           <!-- <a (click)="onLogout()" mat-button>Logout</a>                     -->
+          <!-- <button mat-button [matMenuTriggerFor]="menu">Menu</button> -->
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item>Profile</button>
+            <button mat-menu-item (click)="onLogout()">Logout</button>
+          </mat-menu>
         </nav>
       </div>
     </mat-toolbar-row>
